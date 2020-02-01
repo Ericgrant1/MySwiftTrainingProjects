@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUx-c8-MhP">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MealTime-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMealTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mealtime1" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-Sc-eiY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vA7-Sc-eiY" secondAttribute="height" multiplier="207:76" id="1rt-Ew-wz3"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e9I-rU-qcD">
+                                <rect key="frame" x="0.0" y="240" width="414" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vqc-OR-aIV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qDM-uP-Xwx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vA7-Sc-eiY" firstAttribute="trailing" secondItem="e9I-rU-qcD" secondAttribute="trailing" id="2JR-Eh-n96"/>
+                            <constraint firstItem="e9I-rU-qcD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5Ky-G8-u9u"/>
+                            <constraint firstItem="vA7-Sc-eiY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cpf-8k-UcJ"/>
+                            <constraint firstItem="vA7-Sc-eiY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G0t-KM-XPZ"/>
+                            <constraint firstItem="e9I-rU-qcD" firstAttribute="top" secondItem="vA7-Sc-eiY" secondAttribute="bottom" id="SHY-qL-P5f"/>
+                            <constraint firstItem="vA7-Sc-eiY" firstAttribute="leading" secondItem="e9I-rU-qcD" secondAttribute="leading" id="o9B-DJ-NqR"/>
+                            <constraint firstItem="vA7-Sc-eiY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vhS-Ev-M4T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MealTime" id="Ncr-HR-0oB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XNG-Ea-yJq">
+                            <connections>
+                                <action selector="addButton:" destination="BYZ-38-t0r" id="erA-XJ-dfy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timeTableView" destination="e9I-rU-qcD" id="MN3-Ev-HRi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="119.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eQX-xx-rk4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dUx-c8-MhP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kla-N6-2Vo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8Du-dx-riZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qmd-yr-Ha4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mealtime1" width="600" height="212"/>
+    </resources>
+</document>
